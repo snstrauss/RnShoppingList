@@ -1,15 +1,14 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet, View} from 'react-native';
 
-// import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import Icon from 'react-native-vector-icons/dist/FontAwesome';
 
 export default function ListItem({item}) {
   return (
     <TouchableOpacity style={S.item}>
       <View style={S.content}>
         <Text style={S.text}>{item.name}</Text>
-        {/* <Icon name="remove" size={20} color="firebrick" /> */}
-        <Text style={S.delete}>X</Text>
+        <Icon name="remove" size={20} color="firebrick" />
       </View>
     </TouchableOpacity>
   );
@@ -28,8 +27,5 @@ const S = StyleSheet.create({
   },
   text: {
     fontSize: 18,
-  },
-  delete: {
-    color: 'red',
   },
 });
