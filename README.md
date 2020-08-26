@@ -2,7 +2,7 @@
 
 A basic tutorial app, for getting reacquainted with React-Native.
 
-Using [this tutorial](https://www.youtube.com/watch?v=Hf4MJH0jDb4){:target="_blank" rel="noopener"}.
+Using [this tutorial](https://www.youtube.com/watch?v=Hf4MJH0jDb4).
 
 ---
 
