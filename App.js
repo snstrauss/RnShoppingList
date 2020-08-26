@@ -1,20 +1,16 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {StyleSheet, SafeAreaView} from 'react-native';
 import Header from './src/components/header';
 import ProductList from './src/components/productList';
-import {getItems} from './src/services/items.service';
+import ItemsContextProvider from './src/contexts/items.context';
 
 export default function App() {
-  const [items, setItems] = useState([]);
-
-  useEffect(() => {
-    getItems(25).then(setItems);
-  }, []);
-
   return (
     <SafeAreaView style={S.app}>
-      <Header title="Shopping List" />
-      <ProductList items={items} />
+      <ItemsContextProvider>
+        <Header title="Shopping List" />
+        <ProductList />
+      </ItemsContextProvider>
     </SafeAreaView>
   );
 }

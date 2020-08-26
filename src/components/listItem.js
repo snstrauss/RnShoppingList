@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import {TouchableOpacity, Text, StyleSheet, View} from 'react-native';
 
 import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import {ItemsContext} from '../contexts/items.context';
 
 export default function ListItem({item}) {
+  const {
+    methods: {removeItem},
+  } = useContext(ItemsContext);
+
   return (
     <TouchableOpacity style={S.item}>
       <View style={S.content}>
         <Text style={S.text}>{item.name}</Text>
-        <Icon name="remove" size={20} color="firebrick" />
+        <Icon
+          name="remove"
+          size={20}
+          color="firebrick"
+          onPress={() => removeItem(item)}
+        />
       </View>
     </TouchableOpacity>
   );

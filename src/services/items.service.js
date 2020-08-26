@@ -1,17 +1,23 @@
 import {random, commerce} from 'faker';
 
-function generateItems(count) {
-  return Array(count)
+export function generateItems(count, title) {
+  const items = Array(count)
     .fill(0)
-    .map((_, idx) => {
+    .map(() => {
       return {
         id: random.uuid(),
-        name: commerce.productName(),
+        name: title || commerce.productName(),
         description: commerce.productDescription(),
         price: commerce.price(),
         color: commerce.color(),
       };
     });
+
+  return items;
+}
+
+export function removeItem(items, item) {
+  return items.filter((listItem) => listItem.id !== item.id);
 }
 
 export function getItems(count) {
